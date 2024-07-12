@@ -1,4 +1,4 @@
-# spcutils/__init__.py
+# spcpy/__init__.py
 
 # Importing modules to make them available at the package level
 from misc_utils import *
