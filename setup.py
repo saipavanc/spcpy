@@ -16,7 +16,7 @@ setup(
     description='Collection of methods and tools, some misc, mostly for numerical simulations.',
     long_description=open('README.md').read(),
     long_description_content_type='text/markdown',
-    url='https://github.com/yourusername/my_package',  # Replace with your repository URL
+    url='https://github.com/saipavanc/spcpy',  # Replace with your repository URL
     classifiers=[
         'Programming Language :: Python :: 3',
         'License :: OSI Approved :: MIT License',  # Change if you use a different license
