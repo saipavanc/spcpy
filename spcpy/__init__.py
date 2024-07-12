@@ -1,7 +1,7 @@
 # spcpy/__init__.py
 
 # Importing modules to make them available at the package level
-from misc_utils import *
+from spcpy import misc_utils
 
 # Initializing package-level variables
 __version__ = '0.0.0'
