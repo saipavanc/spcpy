@@ -18,17 +18,17 @@ class Plot:
         self.is_interactive = is_interactive
         if self.is_interactive:
             plt.ion()
-            
+
     def onpick1(event):
         if isinstance(event.artist, Line2D):
             thisline = event.artist
             xdata = thisline.get_xdata()
             ydata = thisline.get_ydata()
             ind = event.ind
-            print('onpick1 line:', np.column_stack([xdata[ind], ydata[ind]]))
+            print("onpick1 line:", np.column_stack([xdata[ind], ydata[ind]]))
         elif isinstance(event.artist, Rectangle):
             patch = event.artist
-            print('onpick1 patch:', patch.get_path())
+            print("onpick1 patch:", patch.get_path())
 
     def plot1D(
         self,

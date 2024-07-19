@@ -1,7 +1,7 @@
 # spcpy/__init__.py
 
 # Importing modules to make them available at the package level
-from spcpy import misc_utils
+from spcpy import misc_utils, scqubits_utils
 from spcpy.plotting_utils import Plot
 
 # Initializing package-level variables
