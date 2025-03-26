@@ -155,3 +155,24 @@ class scq_plot:
                 # convert to eigenbasis and add to eops
                 p_ops.append(p_op)
         return p_ops, θ1_coarse
+    
+    
+def bare_idx_to_raveled_idx(
+    bare_indices: Union[tuple, list], circuit: QubitBaseClass
+) -> int:
+    """
+    Convert bare index to raveled index.
+
+    Args:
+        bare_index (tuple, list): List of bare indices for all the subsystems
+        circuit (QubitBaseClass): Circuit Class or HilbertSpace object.
+
+    Returns:
+        int: The raveled index.
+    """
+    if sum(((np.array(bare_indices)+1) - np.array(circuit.subsystem_trunc_dims)) > 0) > 0:
+        raise ValueError("Bare indices are out of bounds, check the subsystem truncation dimensions")
+    raveled_index = 0
+    for idx, dim in enumerate(circuit.subsystem_trunc_dims):
+        raveled_index += bare_indices[idx] * int(np.prod(circuit.subsystem_trunc_dims[idx+1:]))
+    return raveled_index
